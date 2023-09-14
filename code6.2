@@ -12,6 +12,20 @@ pipeline{
                 echo "Run goreporter Unit Tests"
                 echo "Run Leapwork Integration Tests"
             }
+            post{
+                success{
+                    mail to: "candicethewineychick@gmail.com",
+                    subject: "Unit and Integration Tests Outcome",
+                    body: "Unit and Integration Tests were successful"
+                }
+            }
+            post{
+                failure{
+                    mail to: "candicethewineychick@gmail.com",
+                    subject: "Unit and Integration Tests Outcome",
+                    body: "Unit and Integration Tests were not successful"
+                }
+            }
         }
         stage("Code Analysis"){
             steps{
