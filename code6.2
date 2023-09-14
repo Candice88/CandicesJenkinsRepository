@@ -12,13 +12,6 @@ pipeline{
                 echo "Run goreporter Unit Tests"
                 echo "Run Leapwork Integration Tests"
             }
-            post{
-                success{
-                    mail to: "candicethewineychick@gmail.com
-                    subject: "Unit and Integration Test Outcome"
-                    body: "Unit and Integration Tests were successful"
-                }
-            }
         }
         stage("Code Analysis"){
             steps{
@@ -28,13 +21,6 @@ pipeline{
         stage("Security Scan"){
             steps{
                 echo "Use JFrog for vulnerability scanning of code"
-            }
-            post{
-                success{
-                    mail to: "candicethewineychick@gmail.com
-                    subject: "Security Scan Outcome"
-                    body: "Security scan was successful"
-                }
             }
         }
         stage("Deploy to Staging"){
