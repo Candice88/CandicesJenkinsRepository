@@ -29,6 +29,13 @@ pipeline{
             steps{
                 echo "Use JFrog for vulnerability scanning of code"
             }
+            post{
+                success{
+                    mail to: "candicethewineychick@gmail.com",
+                    subject: "Security Scan Outcome",
+                    body: "Security Scan was successful"
+                }
+            }
         }
         stage("Deploy to Staging"){
             steps{
