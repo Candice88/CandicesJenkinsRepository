@@ -16,8 +16,8 @@ pipeline{
                 success{
                     mail to: "candicethewineychick@gmail.com",
                     subject: "Unit and Integration Tests Outcome",
-                    body: "Unit and Integration Tests were successful",
-                    attachLog: true
+                    attachLog: true,
+                    body: "Unit and Integration Tests were successful"
                 }
             }
         }
@@ -34,8 +34,8 @@ pipeline{
                 success{
                     mail to: "candicethewineychick@gmail.com",
                     subject: "Security Scan Outcome",
-                    body: "Security Scan was successful",
-                    attachLog: true
+                    attachLog: true,
+                    body: "Security Scan was successful"
                 }
             }
         }
