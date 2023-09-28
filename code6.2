@@ -3,7 +3,7 @@ pipeline{
     stages{
         stage("Build1"){
             steps{
-                echo "Building!!!"
+                echo "Building..."
                 echo "Automated build process via Maven initiated"
             }
         }
@@ -16,7 +16,8 @@ pipeline{
                 success{
                     mail to: "candicethewineychick@gmail.com",
                     subject: "Unit and Integration Tests Outcome",
-                    body: "Unit and Integration Tests were successful"
+                    body: "Unit and Integration Tests were successful",
+                    attachLog: true
                 }
             }
         }
@@ -33,7 +34,8 @@ pipeline{
                 success{
                     mail to: "candicethewineychick@gmail.com",
                     subject: "Security Scan Outcome",
-                    body: "Security Scan was successful"
+                    body: "Security Scan was successful",
+                    attachLog: true
                 }
             }
         }
